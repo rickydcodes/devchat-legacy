@@ -1,0 +1,52 @@
+[
+    {
+        "title": "No inappropriate threads, replies, or profile statuses.",
+        "description": "Keep everything safe for work and use common sense.",
+        "banLength": "7"
+    },
+    {
+        "title": "Don't talk about anything religious or political.",
+        "description": "This isn't Twitter. This is a wannabe stack overflow made by a teenager. Talk about coding or casual things.",
+        "banLength": "7"
+    },
+    {
+        "title": "No spamming.",
+        "description": "Don't create a bunch of accounts (cough cough.. daniel), threads, or replies. (This includes dupelicate threads asking the same question)",
+        "banLength": "3"
+    },
+    {
+        "title": "Don't try to hack my site with malice.",
+        "description": "Don't break something and not tell me. If you manage to break something, put it in the bug-reports category so I can fix it. You'll be rewarded for this.",
+        "banLength": "7"
+    },
+    {
+        "title": "Don't advertise your projects on the website.",
+        "description": "There's a showcase on Mr. Codes. Use it.",
+        "banLength": "1"
+    },
+    {
+        "title": "Don't harass other users.",
+        "description": "This is a safe space for students to collaborate and learn. Don't ruin the experience I created.",
+        "banLength": "14"
+    },
+    {
+        "title": "Don't bombard me with questions.",
+        "description": "If you want the site updated, don't ask me to update the site. Just fill up bug-reports and suggestions and I'll take a hint.",
+        "banLength": "3"
+    },
+    {
+        "title": "Don't share challenge answers.",
+        "description": "Sharing challenge answers or helping someone with a challenge is strictly prohibited.",
+        "banLength": "7"
+    },
+    {
+        "title": "Don't claim to be a staff member of DevChat unless you are",
+        "description": "Real staff members possess the 'administrator' badge on their profile. Anyone else is a fake and a fraud.",
+        "banLength": "7"
+    },
+    {
+        "title": "Don't use an alternate account while you're banned.",
+        "description": "I will figure out your alternate account. When I do, you'll never be allowed back on the platform.",
+        "banLength": "9999999"
+    }
+]

@@ -1,0 +1,24 @@
+<%- contentFor(`main`) %>
+<div id="main">
+   <h2><%=title%></h2>
+   <div class="message">
+        <div class="profile">
+            <p class="usernameTitle">
+                <a href="/users/<%=thread.posterId%>">@<%=thread.username%></a>
+            </p>
+            <div class="profilePicWrapper">
+            <img class="profilePicture" title="Profile Picture" src="<%=thread.profilepicture%>">
+            </div>
+            <p class="postDate">Posted <%=thread.postDate%></p>
+        </div>
+        <div class="postTextHolder">
+            <p class="postTitle"><%=thread.title%></p>
+            <p class="postBody"><%=thread.body%></p>
+        </div>
+    </div>
+    <textarea id="reasonInput" min="10" max="5000" placeholder="Enter a reason for the deletion (must be at least 1 sentence)" type="text"></textarea>
+    <div id="buttonsHolder">
+        <button id="backButton">&lt;</button>
+        <button id="deleteThreadButton">Delete</button>
+      </div>
+</div>

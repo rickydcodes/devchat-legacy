@@ -1,0 +1,28 @@
+<%- contentFor(`main`) %>
+<% for (log in logs) { %>
+  <% if (log > 0) { %>
+    <tr class="log">
+      <td class="admin"><a href="/users/<%=logs[log].adminId%>"><%=logs[log].adminUsername%></a></td>
+      <td class="action"><%=logs[log].actionType%></td>
+
+      <% if (logs[log].replyBody) { %>
+        <td class="admin"><a href="/threads/<%=logs[log].threadId%>#<%=logs[log].replyId%>"><%=logs[log].replyBody%></a></td>
+      <% } else if (logs[log].username) { %>
+        <td class="admin"><a href="/users/<%=logs[log].userId%>"><%=logs[log].username%></a></td>
+      <% } else if (logs[log].threadTitle) { %>
+        <td class="admin"><a href="/threads/<%=logs[log].threadId%>#0"><%=logs[log].threadTitle%></a></td>
+      <% } %>
+
+      <td class="reason"><%=logs[log].reason%></td>
+      <td class="date"><%=logs[log].date%></td>
+    </tr>
+  <% } else { %>
+    <tr class="log">
+      <td class="admin"><a>Username</a></td>
+      <td class="action">Action Type</td>
+      <td class="userThread">User/Thread/Reply</td>
+      <td class="reason">Reason</td>
+      <td class="date">Date</td>
+    </tr>
+  <% } %>
+<% } %>

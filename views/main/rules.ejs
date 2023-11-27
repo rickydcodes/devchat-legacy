@@ -1,0 +1,18 @@
+<%- contentFor(`main`) %>
+<div id="main">
+    <div id="rules">
+        <% for (let rule in rules) { %>
+            <div class="ruleDiv">
+                <h3 class="title">
+                    Rule <%=parseInt(rule)+1%>: <%=rules[rule].title%>
+                </h3>
+                <p class="description">
+                    <%=rules[rule].description%>
+                </p>
+                <p class="banLength">
+                    Ban Length: <%=rules[rule].banLength%> day(s)
+                </p>
+            </div>
+        <% } %>
+    </div>
+</div>

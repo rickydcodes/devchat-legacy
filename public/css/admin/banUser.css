@@ -1,0 +1,135 @@
+#main {
+    margin: 10px 100px;
+    background-color: whitesmoke;
+    border-top: 7px solid rgb(78, 78, 78);
+    height: calc(100vh - 130px);
+}
+
+h2 {
+    font-family: sans-serif;
+    text-align: center;
+    margin: 3px;
+}
+
+#main {
+    margin: 0 100px;
+    height: 100%;
+    text-align: center;
+}
+
+#buttonsHolder {
+    margin-top: 10px;
+    padding-bottom: 10px;
+    text-align: left;
+}
+
+#backButton {
+    width: 35px;
+    height: 35px;
+    font-family: monospace;
+    font-size: 25px;
+    color: black;
+    line-height: 15px;
+    border: none;
+    background-color: rgb(182, 182, 182);
+    margin: 10px;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+#banUserButton {
+    background-color: rgb(182, 182, 182);
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    font-family: "Roboto";
+    text-align: center;
+    line-height: 35px;
+    color: black;
+    float: right;
+    padding: 0px 17px;
+    margin: 10px 20px;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+#header {
+    padding: 15px;
+    border-top: 1px solid black;
+}
+
+#pfpHolder {
+    display: inline-block;
+}
+
+#profilePicture {
+    width: 85px;
+    border-radius: 100%;
+    margin-left: 15px;
+}
+
+#profilePicture,
+#userInfo {
+    display: inline-block;
+    vertical-align: top;
+}
+
+#userInfo {
+    margin: 0 15px;
+}
+
+#usernameTitle,
+#skillLevelTitle {
+    font-family: monospace;
+    color: #2a2a2a;
+}
+
+#skillLevelTitle {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#usernameTitle {
+    font-size: 15px;
+}
+
+#followers,
+#following {
+    display: inline-block;
+    font-family: monospace;
+    font-size: 14px;
+}
+
+#followers a,
+#following a {
+    text-decoration: none;
+    color: #636262;
+}
+
+#followers {
+    margin-right: 5px;
+}
+
+#rulesList {
+    padding: 5px;
+    border: none;
+    background-color: lightgray;
+    width: 90%;
+    cursor: pointer;
+}
+
+#descriptionInput {
+    width: 88%;
+    height: 200px;
+    border: none;
+    background-color: lightgray;
+    padding: 5px;
+    margin-top: 10px;
+    outline: none;
+    font-size: 15px;
+    color: black;
+}
+
+#descriptionInput::placeholder {
+    color: black;
+}

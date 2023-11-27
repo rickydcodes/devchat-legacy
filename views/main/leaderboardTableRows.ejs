@@ -1,0 +1,21 @@
+<%- contentFor(`main`) %>
+<tr class="user">
+    <td class="usernameData"><a>Username</a></td>
+    <td class="skilllevelData"><a>Skill Level</a></td>
+    <td class="followerData"><a>Followers</a></td>
+    <td class="threadsData"><a>Threads</a></td>
+    <td class="repliesData"><a>Points</a></td>
+</tr>
+<% for (let userInDevChat of leaderboardJSON) { %>
+    <% if (userInDevChat.username == selectedUsername) { %>
+        <tr class="user" style="background-color: lightgray">
+    <% } else { %>
+        <tr class="user">
+    <% } %>
+        <td class="usernameData"><a href="/users/<%=userInDevChat["_id"]%>"><%=userInDevChat.username%></a></td>
+        <td class="skilllevelData"><a href="/users/<%=userInDevChat["_id"]%>"><%=userInDevChat.skilllevel%></a></td>
+        <td class="followerData"><a href="/users/<%=userInDevChat["_id"]%>/followers/"><%=userInDevChat.followers.length%></a></td>
+        <td class="threadsData"><a><%=userInDevChat.threads%></a></td>
+        <td class="pointsData"><a><%=userInDevChat.points%></a></td>
+    </tr>
+<% } %>

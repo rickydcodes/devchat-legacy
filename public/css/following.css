@@ -1,0 +1,57 @@
+#main {
+    margin: 0 200px;
+}
+
+h2 {
+    font-family: monospace;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+#followingHolder {
+    border-top: 7px solid rgb(78, 78, 78);
+    background-color: whitesmoke;
+    height: 725px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+#nofollowingMessage {
+    font-size: 15px;
+    font-family: monospace;
+    margin-left: 10px;
+}
+
+.following {
+    width: 150px;
+    height: 220px;
+    margin-left: 10px;
+    margin-top: 10px;
+    background-color: lightgray;
+    border-top: 7px solid rgb(78, 78, 78);
+    float: left;
+}
+
+.followingkillLevel,
+.followingJoinDate,
+.followingUsername {
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+    margin: 0px;
+    margin-bottom: 5px;
+}
+
+.followingUsername a {
+    font-family: monospace;
+    color: black;
+    text-decoration: none;
+}
+
+.followingPfp {
+    width: 130px;
+    height: 130px;
+    margin: auto;
+    display: block;
+    margin-bottom: 10px;
+}

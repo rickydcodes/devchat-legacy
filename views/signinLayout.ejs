@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://apis.google.com/js/platform.js" async></script>
+    <meta name="google-signin-client_id" content="750256102520-id3mg2lctdr6sbpnloo67ueaud06gf35.apps.googleusercontent.com">
+    <link href="/css/<%=stylesheet%>.css" rel="stylesheet">
+    <link href="/css/layout.css" rel="stylesheet">
+    <title>DevChat <%=title%></title>
+    <% if (script) {%>
+    <script src="/js/<%=script%>.js" defer></script>
+    <% } %>
+</head>
+
+<body>
+    <%- defineContent(`signin`) %>
+</body>
+
+</html>

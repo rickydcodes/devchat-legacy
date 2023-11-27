@@ -1,0 +1,100 @@
+<%- contentFor(`main`) %>
+<div id="main">
+    <% for (let message in messages) { %>
+     <% if (message == 0 || !messages[message].deleted) { %>
+        <div data-messageId="<%=message%>" class="message">
+            <div class="profile">
+                <p class="usernameTitle">
+                    <a href="/users/<%=messages[message].posterId%>">@<%=messages[message].username%></a>
+                </p>
+                <div class="profilePicWrapper">
+                <img class="profilePicture" title="Profile Picture" src="<%=messages[message].profilepicture%>">
+                </div>
+                <p class="skillLevelTitle"><%=messages[message].skilllevel%></p>
+                <p class="postDate">Posted <%=messages[message].postDate%></p>
+                <div data-messageId="<%=message%>" class="messageFunctions">
+                        <% if (messages[message].likes.includes(userDocument["_id"])) {%>
+                        <button class="likeButton selected">
+                            <img src="../../assets/like.png" class="buttonImg" />
+                        </button>
+                        <% } else { %>
+                        <button class="likeButton" title="Like">
+                            <img src="../../assets/like.png" class="buttonImg" />
+                        </button>
+                        <% } %>
+
+                        <p title="Likes" class="likes">
+                            <% if (messages[message].likes.length > 1000) { %>
+                                1k+
+                            <% } else { %>
+                                <%=messages[message].likes.length%>
+                            <% } %>
+                        </p>
+
+                        <% if (messages[message].dislikes.includes(userDocument["_id"])) {%>
+                        <button class="dislikeButton selected">
+                            <img src="../../assets/dislike.png" class="buttonImg" />
+                        </button>
+                        <% } else { %>
+                        <button class="dislikeButton" title="Dislike">
+                            <img src="../../assets/dislike.png" class="buttonImg" />
+                        </button>
+                        <% } %>
+
+                        <p title="Dislikes" class="dislikes">
+                            <% if (messages[message].dislikes.length > 1000) { %>
+                                1k+
+                            <% } else { %>
+                                <%=messages[message].dislikes.length%>
+                            <% } %>
+                        </p>
+
+                        <div class="extraButtonsHolder">
+                            <% if (userDocument.administrator || (message != 0 && messages[message].posterId == userDocument["_id"])) { %>
+                                <button class="deleteButton" title="Delete">
+                                    <% if (message == 0) { %>
+                                        <a href="/admin/delete/<%=messages[message]["_id"]%>">x</a>
+                                    <% } else { %>
+                                        x
+                                    <% } %>
+                                </button>
+                            <% } %>
+                            <% if ((message != 0 && messages[message].posterId == userDocument["_id"])) { %>
+                                <button class="editButton" title="Edit"><img src="../../assets/edit.png" class="buttonImg" /></button>
+                            <% } %>
+                            <% if (messages[0].enableReplies || userDocument.administrator || userDocument["_id"] == messages[0].posterId) { %>
+                            <button class="replyButton" title="Reply">
+                                <img src="../../assets/reply.png" class="buttonImg" />
+                            </button>
+                            <% } %>
+                        </div>
+                </div>
+            </div>
+            <div class="postTextHolder">
+                <% if (message == 0) { %>
+                <p class="postTitle"><%=thread.title%></p>
+                <% } else { %>
+                    <p class="postTitle">Replying to <a href="#<%=messages[message].replyto%>"><%=messages[message].replyTo%>@<%=messages[message].replyToUsername%></a></p>
+                <% } %>
+                <p class="postBody"><%=messages[message].body%></p>
+                <div class="editingDiv">
+                    <textarea type="text" class="editBox"><%=messages[message].body%></textarea>
+                    <div class="editingButtons">
+                        <button class="cancelButton">Cancel</button>
+                        <button class="saveButton">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+      <% } %>
+    <% } %>
+</div>
+
+<div id="replyDiv">
+    <button id="backButton">&lt;</button>
+    <p id="replyToText">Replying to @rickyd</p>
+    <textarea maxlength="5000" id="replyBodyInput" placeholder="Enter a body for your reply. 5000 Character Limit" type="text"></textarea>
+    <div id="submitReplyBtnHolder">
+      <button id="submitReplyBtn">+ Post</button>
+    </div>
+</div>

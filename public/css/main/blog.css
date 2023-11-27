@@ -1,0 +1,13 @@
+#main {
+    margin: 0 100px;
+    margin-top: -10px;
+}
+
+#mainContent {
+    margin-left: 20px;
+}
+
+h2,h3,li {
+    color: whitesmoke;
+    font-family: monospace;
+}

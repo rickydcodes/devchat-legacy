@@ -1,0 +1,23 @@
+<%- contentFor(`main`) %>
+<div id="main">
+    <h2>Challenges</h2>
+    <% if (user.administrator == "Owner") { %>
+        <a href="/admin/createChallenge/">+ Create Challenge</a>
+    <% } %>
+
+    <div id="sort">
+        <div>
+            <input type="checkbox" name="Sort by Difficulty" id="difficultySortInput" checked>
+            <label for="difficultySortInput">Sort by Difficulty</label>
+            <input type="checkbox" name="Sort by Points" id="pointsSortInput">
+            <label for="pointsSortInput">Sort by Points</label>
+        </div>
+        <div>
+            <input type="checkbox" name="Sort by Incomplete" id="incompleteSortInput">
+            <label for="incompleteSortInput">Sort By Incomplete</label>
+            <input type="checkbox" name="Sort by Completed" id="completedSortInput">
+            <label for="completedSortInput">Sort by Completed</label>
+        </div>
+    </div>
+    <table id="challenges"></table>
+</div>

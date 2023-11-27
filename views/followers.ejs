@@ -1,0 +1,22 @@
+<%- contentFor(`main`) %>
+<div id="main">
+     <div id="followersHolder">
+       <h2>Followers</h2>
+      <% if (profileUser.followers.length > 0) { %>
+     <% for (let follower of followers) { %>
+       <div class="follower">
+         <p class="followerUsername">
+           <a href="/users/<%=follower["_id"]%>">
+             <%=follower.username%>
+           </a>
+         </p>
+         <img class="followerPfp" src="<%=follower.profilepicture%>">
+         <p class="followerSkillLevel"><%=follower.skilllevel%></p>
+         <p class="followerJoinDate">Joined <%=follower.joindate%></p>
+       </div>
+     <% } %>
+     <% } else { %>
+       <p id="noFollowersMessage">This user has no followers.</p>
+     <% } %>
+     </div>
+</div>

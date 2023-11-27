@@ -1,0 +1,44 @@
+{
+    "nonAdmin": {
+        "allowedToView": [
+            "Forum Announcements",
+            "Bug Reports",
+            "Suggestions",
+            "Programming Help and Feedback",
+            "Off Topic"
+        ],
+        "allowedToCreate": [
+            "Bug Reports",
+            "Suggestions",
+            "Programming Help and Feedback",
+            "Off Topic"
+        ]
+    },
+    "admin": {
+        "allowedToView": [
+            "Forum Announcements",
+            "Moderator Threads",
+            "Bug Reports",
+            "Suggestions",
+            "Programming Help and Feedback",
+            "Off Topic"
+        ],
+        "allowedToCreate": [
+            "Moderator Threads",
+            "Bug Reports",
+            "Suggestions",
+            "Programming Help and Feedback",
+            "Off Topic"
+        ]
+    },
+    "Owner": {
+        "allowedToCreate": [
+            "Forum Announcements",
+            "Moderator Threads",
+            "Bug Reports",
+            "Suggestions",
+            "Programming Help and Feedback",
+            "Off Topic"
+        ]
+    }
+}
