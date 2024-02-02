@@ -1,0 +1,267 @@
+#main {
+    margin: 0 100px;
+}
+
+.message {
+    width: 100%;
+    background-color: white;
+}
+
+.message:not(:first-child) {
+    margin-top: 20px;
+}
+
+@keyframes highlightElement {
+    0% {
+        box-shadow: 0px 0px 7px 7px whitesmoke;
+    }
+    100% {
+        box-shadow: none;
+    }
+}
+
+.profilePicWrapper {
+    text-align: center;
+    margin-top: 5px;
+}
+
+.profilePicture {
+    width: 120px;
+    height: 120px;
+}
+
+.usernameTitle {
+    /* width: 125px;
+  height: 50px; */
+    overflow-wrap: break-word;
+    z-index: 1;
+    margin: 0;
+    color: black;
+    font-family: "Noto Sans JP";
+    font-size: 12px;
+    text-align: center;
+}
+
+.usernameTitle a {
+    text-decoration: none;
+    color: black;
+}
+
+.replyButton {
+    float: right;
+}
+
+.skillLevelTitle {
+    color: black;
+    font-family: monospace;
+    font-size: 15px;
+    margin: 0;
+    text-align: center;
+}
+
+.postDate {
+    color: black;
+    font-size: 12px;
+    font-family: "Noto Sans JP";
+    word-break: break-all;
+    text-align: center;
+    margin: 0;
+    margin-top: 5px;
+}
+
+.messageFunctions {
+    margin: 0;
+    padding: 3px 7px;
+    margin-top: 15px;
+}
+
+#buttonHolder {
+    padding: 3px 7px;
+    margin-top: 15px;
+}
+
+.messageFunctions button {
+    background-color: #cfcfcf;
+    border: none;
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+}
+
+p.likes,
+p.dislikes {
+    display: inline;
+    margin-left: 3px;
+}
+
+button.selected {
+    background-color: #b1b1b1;
+}
+
+.replyButton {
+    margin-left: 5px;
+}
+
+.dislikeButton {
+    margin-left: 3px;
+}
+
+.replyButton .buttonImg {
+    position: relative;
+    right: 2px;
+}
+
+.deleteButton a {
+    text-decoration: none;
+    color: black;
+}
+
+.dislikeButton .buttonImg {
+    position: relative;
+    top: 2px;
+}
+
+.buttonImg {
+    background-size: 100%;
+    height: 12px;
+}
+
+.profile {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.postTextHolder {
+    display: inline-block;
+    vertical-align: top;
+    width: calc(100% - 215px);
+    height: 232px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.profile {
+    width: 210px;
+    border-right: 1px solid gray;
+}
+
+.divider {
+    width: 1px;
+    height: 100%;
+    background-color: gray;
+    display: inline-block;
+}
+
+.postTitle {
+    font-size: 20px;
+    font-family: "Roboto";
+    font-weight: bold;
+    margin: 0;
+    padding-left: 5px;
+    padding-top: 5px;
+    overflow-wrap: break-word;
+    white-space: pre-line;
+}
+
+.postBody {
+    font-size: 15px;
+    font-family: "Roboto";
+    padding-left: 5px;
+    padding-top: 5px;
+    overflow-wrap: break-word;
+    white-space: pre-line;
+    margin-top: 5px;
+}
+
+#replyDiv {
+    width: calc(100% - 230px);
+    height: 300px;
+    position: fixed;
+    bottom: 0px;
+    background-color: white;
+    display: none;
+}
+
+#backButton {
+    width: 35px;
+    height: 35px;
+    font-family: monospace;
+    font-size: 25px;
+    color: black;
+    line-height: 15px;
+    border: none;
+    background-color: rgb(182, 182, 182);
+    margin: 10px;
+    cursor: pointer;
+    float: left;
+}
+
+#replyToText {
+    font-family: system-ui;
+    margin: 0;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.postTitle a,
+#replyToText a {
+    text-decoration: none;
+    color: grey;
+}
+
+#replyBodyInput {
+    border: 2px solid rgb(95, 95, 95);
+    width: calc(100% - 25px);
+    height: 180px;
+    margin: auto;
+    display: block;
+}
+
+#submitReplyBtn {
+    background-color: rgb(182, 182, 182);
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    font-family: "Roboto";
+    text-align: center;
+    line-height: 35px;
+    color: black;
+    float: right;
+    padding: 0px 17px;
+}
+
+#submitReplyBtn::first-letter {
+    margin: 5px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+#submitReplyBtnHolder {
+    overflow: auto;
+    margin: 10px;
+}
+
+.extraButtonsHolder {
+    float: right;
+}
+
+.editingDiv {
+    display: none;
+}
+
+.editBox {
+    width: calc(100% - 12px);
+    height: calc(100% - 45px);
+    display: inline-block;
+}
+
+.cancelButton,
+.saveButton {
+    border: none;
+    padding: 10px;
+    background-color: #464646;
+    color: white;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    cursor: pointer;
+}

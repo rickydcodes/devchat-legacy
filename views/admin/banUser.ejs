@@ -1,0 +1,31 @@
+<%- contentFor(`main`) %>
+<div id="main">
+   <h2><%=title%></h2>
+   <div id="header">
+      <div id="pfpHolder">
+        <img id="profilePicture" title="Profile Picture" src="<%=userToBan.profilepicture%>">
+      </div>
+      <div id="userInfo">
+          <div id="skillLevelTitle"><%=userToBan.skilllevel%></div>
+          <div id="usernameTitle">@<%=userToBan.username%></div>
+          <div id="followersHolder">
+            <p id="followers">Followers: <a><%=userToBan.followers.length%></a></p>
+            <p id="following">Following: <a><%=userToBan.following.length%></a></p>
+          </div>
+      </div>
+  </div>
+
+  <select id="rulesList">
+    <option value="" selected>Choose a Rule
+    <% for (let rule in rules) {%>
+        <option value="<%=rule%>"><%=rules[rule].title%>
+    <% } %>
+  </select>
+
+  <textarea name="Description" id="descriptionInput" placeholder="Enter a description"></textarea>
+
+  <div id="buttonsHolder">
+      <button id="backButton">&lt;</button>
+      <button id="banUserButton">Ban</button>
+  </div>
+</div>

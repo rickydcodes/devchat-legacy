@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://apis.google.com/js/platform.js" async></script>
+    <meta name="google-signin-client_id" content="750256102520-id3mg2lctdr6sbpnloo67ueaud06gf35.apps.googleusercontent.com">
+    <link href="/css/<%=stylesheet%>.css" rel="stylesheet">
+    <link href="/css/layout.css" rel="stylesheet">
+    <title>DevChat <%=title%></title>
+    <script src="/js/layout.js" defer></script>
+    <% if (script) {%>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="/js/<%=script%>.js" defer></script>
+    <% } %>
+</head>
+
+<body>
+    <nav>
+        <h1 id="nav-title">DevChat</h1>
+        <div id="nav-links">
+            <a class="nav-link" href="/home">Home</a>
+            <a class="nav-link" href="/profile">Profile</a>
+            <a class="nav-link" href="/forum">Forum</a>
+            <a class="nav-link" href="/leaderboard">Leaderboard</a>
+            <a class="nav-link" href="/settings">Settings</a>
+        </div>
+        <div id="signOutButton">Sign Out</div>
+    </nav>
+    <div id="container">
+        <div id="search-bar">
+            <input id="searchUsersInput" placeholder="Search users (username)" type="text">
+            <button id="searchUsersButton">Search</button>
+        </div>
+        <div id="mainContent">
+            <%- defineContent(`main`) %>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<%- contentFor(`main`) %>
+<div id="main">
+    <div id="forum">
+        <a href="/createThread" id="createThread" class="createThreadBtn">+ Create Thread</a>
+        <div id="topicsDiv">
+            <ul id="sortOptions">
+                <% if (user.administrator) { %>
+              <li id="0" style="width: calc(100% / 4);" class="sortOption selected">Recent</li>
+              <li id="1" style="width: calc(100% / 4);" class="sortOption">Trending</li>
+              <li id="2" style="width: calc(100% / 4);" class="sortOption">My threads</li>
+              <li id="3" style="width: calc(100% / 4);" class="sortOption">Deleted Threads</li>
+                <% } else { %>
+                    <li id="0" class="sortOption selected">Recent</li>
+                    <li id="1" class="sortOption">Trending</li>
+                    <li id="2" class="sortOption">My threads</li>
+                <% } %>
+            </ul>
+            <div>
+                <input type="text" name="Search Bar" id="searchInput" placeholder="Search for a thread by a title or hashtag">
+                <button id="searchButton">Search</button>
+            </div>
+            <select id="topicsList">
+                <option value="" selected>Choose a topic
+                    <% for (let topic of topics) {%>
+                <option value="<%=topic%>"><%=topic%>
+                    <% } %>
+            </select>
+        </div>
+        <div id="threadsDiv"></div>
+    </div>
+</div>

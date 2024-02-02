@@ -1,0 +1,21 @@
+<%- contentFor(`main`) %>
+<tr class="user">
+    <td class="placeData"><a>Place</a></td>
+    <td class="usernameData"><a>Username</a></td>
+    <td class="skilllevelData"><a>Skill Level</a></td>
+    <td class="followerData"><a>Followers</a></td>
+    <td class="threadsData"><a>Threads</a></td>
+</tr>
+<% for (let userInDevChat in leaderboardJSON) { %>
+    <% if (leaderboardJSON[userInDevChat].username == selectedUsername) { %>
+        <tr class="user" style="background-color: lightgray">
+    <% } else { %>
+        <tr class="user">
+    <% } %>
+        <td class="placeData" style="width: 75px;"><a><%=parseInt(userInDevChat) + 1%></a></td>
+        <td class="usernameData"><a href="/users/<%=leaderboardJSON[userInDevChat]["_id"]%>"><%=leaderboardJSON[userInDevChat].username%></a></td>
+        <td class="skilllevelData"><a href="/users/<%=leaderboardJSON[userInDevChat]["_id"]%>"><%=leaderboardJSON[userInDevChat].skilllevel%></a></td>
+        <td class="followerData"><a href="/users/<%=leaderboardJSON[userInDevChat]["_id"]%>/followers/"><%=leaderboardJSON[userInDevChat].followers.length%></a></td>
+        <td class="threadsData"><a><%=leaderboardJSON[userInDevChat].threads%></a></td>
+    </tr>
+<% } %>

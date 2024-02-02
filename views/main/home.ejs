@@ -1,0 +1,121 @@
+<%- contentFor(`main`) %>
+<div id="main">
+   <div id="skillLevelDiv">
+     <p id="nextSkillLevelParagraph"><%=slBarLevel.percentage%>% to <%=slBarLevel.skilllevel%></p>
+     <div id="outerBar">
+      <div style="width: calc(<%=slBarLevel.percentage%>%)" id="skillLevelBar"></div>
+     </div>
+   </div>
+
+   <div id="notificationFeed">
+    <h2 id="recentRepliesTitle">Notifications</h2>
+    <table id="notificationsHolder">
+    <% if (notifications.length > 0) { %>
+      <% for (notification of notifications) { %>
+        <tr class="thread">
+          <td>
+            <% if (notification.type == "reply" || notification.type == "replyMention") { %>
+              <a href="/threads/<%=notification.threadId%>#<%=notification.replyId%>"><%=notification.message%></a>
+            <% } %>
+            <% if (notification.type == "like") { %>
+              <a href="/threads/<%=notification.threadId%>#<%=notification.replyId%>"><%=notification.message%></a>
+            <% } %>
+            <% if (notification.type == "followingUserThreadPost" || notification.type == "threadMention") { %>
+              <a href="/threads/<%=notification.threadId%>#0"><%=notification.message%></a>
+            <% } %>
+            <% if (notification.type == "follow") { %>
+              <a href="/users/<%=notification.userId%>"><%=notification.message%></a>
+            <% } %>
+          </td>
+        </tr>
+      <% }%>
+    <% } else { %>
+      <p id="noActivityParagraph">You have no notifications.</p>
+    <% } %>
+  </table>
+  </div>
+
+   <div id="recentThreadsPosted">
+     <h2 id="recentThreadsTitle">Recent Thread Posts</h2>
+     <table id="recentThreadsHolder">
+       <% if (recentThreads.length > 0) { %>
+       <% for (let thread of recentThreads) { %>
+           <tr data-topicid='<%=thread["_id"]%>' class="thread">
+               <td>
+                   <a href="/threads/<%=thread["_id"]%>"><%=thread.title%></a>
+               </td>
+
+               <td>
+                   <a href="/threads/<%=thread["_id"]%>">
+                       <% if (thread.views >= 1000) { %>
+                       Views: 1k+
+                       <% } else { %>
+                       Views: <%=thread.views%>
+                       <% }%>
+                   </a>
+               </td>
+
+               <td>
+                   <a href="/threads/<%=thread["_id"]%>">
+                       Posted <%=thread.timeDifference%>
+                   </a>
+               </td>
+           </tr>
+       <% } %>
+       <% } else { %>
+        <p id="noActivityParagraph">You have no recent thread post activity.</p>
+       <% } %>
+     </table>
+   </div>
+
+   <div id="recentReplies">
+       <h2 id="recentRepliesTitle">Recent Replies</h2>
+       <table id="recentRepliesHolder">
+        <% if (recentReplies.length > 0) { %>
+         <% for (let thread of recentReplies) { %>
+             <tr data-topicid='<%=thread["_id"]%>' class="thread">
+               <td>
+                   <a href="/threads/<%=thread.threadId%>#<%=thread["_id"]%>">
+                     <%=thread.body.substring(0, 20)%>...
+                   </a>
+               </td>
+
+                 <td>
+                     <a href="/threads/<%=thread.threadId%>#<%=thread["_id"]%>">
+                       Replied to @<%=thread.replyToUsername%>
+                     </a>
+                 </td>
+
+                 <td>
+                     <a href="/threads/<%=thread.threadId%>#<%=thread["_id"]%>">
+                       <% if (thread.likes.length >= 100) { %>
+                         Likes: 100+
+                       <% } else { %>
+                         Likes: <%=thread.likes.length%>
+                       <% }%>
+                     </a>
+                 </td>
+
+                 <td>
+                     <a href="/threads/<%=thread.threadId%>#<%=thread["_id"]%>">
+                         <% if (thread.dislikes.length >= 100) { %>
+                         Dislikes: 100+
+                         <% } else { %>
+                         Dislikes: <%=thread.dislikes.length%>
+                         <% }%>
+                     </a>
+                 </td>
+
+                 <td>
+                     <a href="/threads/<%=thread.threadId%>#<%=thread["_id"]%>">
+                         Posted <%=thread.timeDifference%>
+                     </a>
+                 </td>
+             </tr>
+         <% } %>
+         <% } else { %>
+          <p id="noActivityParagraph">You have no recent reply activity.</p>
+         <% } %>
+       </table>
+   </div>
+</div>

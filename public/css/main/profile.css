@@ -1,0 +1,309 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+#main {
+    margin: 0 100px;
+}
+
+#header {
+    padding: 15px;
+    background-color: whitesmoke;
+    border-top: 7px solid rgb(78, 78, 78);
+}
+
+#pfpHolder {
+    display: inline-block;
+}
+
+#online {
+    width: 20px;
+    height: 20px;
+    float: right;
+    right: 9px;
+    position: relative;
+    border-radius: 100%;
+    opacity: 1;
+    background-size: 100%;
+}
+
+#profilePicture {
+    width: 85px;
+    border-radius: 100%;
+    margin-left: 15px;
+}
+
+#profilePicture,
+#userInfo {
+    display: inline-block;
+    vertical-align: top;
+}
+
+#userInfo {
+    margin: 0 15px;
+}
+
+#usernameTitle,
+#skillLevelTitle {
+    font-family: monospace;
+    color: #2a2a2a;
+}
+
+#skillLevelTitle {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#usernameTitle {
+    font-size: 15px;
+}
+
+#followers,
+#following {
+    display: inline-block;
+    font-family: monospace;
+    font-size: 14px;
+}
+
+#followers a,
+#following a {
+    text-decoration: none;
+    color: #636262;
+}
+
+#followBtnHolder {
+    float: right;
+}
+
+#banUserButton a {
+    text-decoration: none;
+    color: white;
+}
+
+#banUserButton,
+#followButton {
+    padding: 10px;
+    background-color: #464646;
+    color: whitesmoke;
+    font-family: monospace;
+    border: none;
+    cursor: pointer;
+}
+
+#followers {
+    margin-right: 5px;
+}
+
+#info {
+    margin-top: 10px;
+    overflow: auto;
+}
+
+#badgeDiv {
+    margin-top: 10px;
+    overflow: auto;
+    padding: 15px;
+    background-color: whitesmoke;
+    border-top: 7px solid rgb(78, 78, 78);
+}
+
+#recentActivityTitle,
+#badgeTitle {
+    text-align: center;
+    width: fit-content;
+    margin: 0;
+    font-family: monospace;
+    font-size: 25px;
+}
+
+#badges {
+    padding-top: 15px;
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.badge {
+    padding-top: 15px;
+    width: 150px;
+    height: 130px;
+    background-color: lightgray;
+    border-top: 4px solid rgb(78, 78, 78);
+    margin-left: 10px;
+    display: inline-block;
+}
+
+.badge:first-child {
+    margin-left: 0;
+}
+
+.badgeTitle {
+    margin: 0;
+    width: 100%;
+    text-align: center;
+    font-family: monospace;
+    font-size: 15px;
+}
+
+.badgeImage {
+    width: 60%;
+    margin: 0 20px;
+    padding: 10px;
+}
+
+#recentActivityDiv {
+    margin-top: 10px;
+    overflow: auto;
+    padding: 15px;
+    background-color: whitesmoke;
+    border-top: 7px solid rgb(78, 78, 78);
+}
+
+#footer {
+    margin-top: 10px;
+    padding: 15px;
+    background-color: whitesmoke;
+    border-top: 7px solid rgb(78, 78, 78);
+    height: 50px;
+    overflow: hidden;
+}
+
+#stats {
+    width: 100%;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.stat {
+    font-family: "Courier New", Courier, monospace;
+    color: #424242;
+    font-size: 18px;
+    display: inline;
+    padding: 15px;
+}
+
+.stat span {
+    color: black;
+}
+
+#status {
+    width: 100%;
+    height: 200px;
+    background-color: whitesmoke;
+    border-top: 7px solid rgb(78, 78, 78);
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+#statusTitle {
+    text-align: center;
+    width: 100%;
+    margin: 0;
+    font-family: monospace;
+    font-size: 25px;
+}
+
+#statusParagraph {
+    word-break: break-word;
+    padding: 15px;
+    font-size: 15px;
+    font-family: monospace;
+}
+
+#editButton {
+    width: 20px;
+    height: 20px;
+    float: right;
+    background-image: url("/assets/edit.png");
+    background-size: 100%;
+    margin-top: 3px;
+    cursor: pointer;
+}
+
+#editDiv {
+    display: none;
+}
+
+#editInput {
+    font-size: 15px;
+    font-family: monospace;
+    width: 100%;
+    height: 250px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: none;
+}
+
+#cancelSaveDiv {
+    float: right;
+}
+
+#cancelButton,
+#saveButton {
+    width: 100px;
+    height: 25px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(78, 78, 78);
+    color: white;
+    font-size: 15px;
+    font-style: monospace;
+    cursor: pointer;
+}
+
+#recentActivity {
+    padding-top: 15px;
+    white-space: nowrap;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    width: 100%;
+}
+
+.activity {
+    margin-top: 10px;
+    height: 90px;
+    background-color: lightgray;
+}
+
+.activity:first-child {
+    margin-top: 0px;
+}
+
+#threadsHolder {
+    width: 100%;
+    height: 100%;
+    margin-top: 10px;
+}
+
+.thread {
+    width: 100%;
+    height: 40px;
+    background-color: white;
+    border-bottom: 3px solid black;
+    text-decoration: none;
+    line-height: 38px;
+    color: black;
+}
+
+td {
+    text-align: center;
+}
+
+td:first-child {
+    padding-left: 5px;
+}
+
+td a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    display: inline-block;
+}
+
+#recentActivityDiv p {
+    color: black;
+    font-family: monospace;
+    font-size: 16px;
+}

@@ -1,0 +1,15 @@
+<%- contentFor(`main`) %>
+<div id="main">
+  <div id="bannedDiv">
+    <h2>Banned for <%=user.banned.rule.banLength%> days</h2>
+    <h3>Rule Violation: <%=user.banned.rule.title%></h3>
+    <textarea id="description" disabled><%=user.banned.description%></textarea>
+    <% if (new Date() < user.banned.length) { %>
+      <button id="logOutButton">Log Out</button>
+    <% } else { %>
+      <input type="checkbox" name="agreeToRules" id="agreeToRulesInput">
+      <label for="agreeToRulesInput">I agree to the rules of DevChat</label>
+      <button id="rejoinButton">Rejoin DevChat</button>
+    <% } %>
+  </div>
+</div>

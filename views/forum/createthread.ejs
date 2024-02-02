@@ -1,0 +1,21 @@
+<%- contentFor(`main`) %>
+<div id="main">
+    <div id="createThreadHolder">
+        <input maxlength="50" id="threadTitleInput" type="text" placeholder="Enter a title for your thread">
+        <select id="topicsList">
+            <option value="" selected>Choose a topic for your thread
+                <% for (let topic of topics) {%>
+            <option value="<%=topic%>"><%=topic%>
+                <% } %>
+        </select>
+        <div>
+            <input checked="true" type="checkbox" name="Enable replies (Administrators can still reply)" id="enableRepliesCheckbox">
+            <label for="enableRepliesCheckbox">Enable replies from other users</label>
+        </div>
+        <textarea maxlength="5000" id="threadBodyInput" type="text" placeholder="Enter the body for your thread (Markdown is supported). 5000 Character Limit"></textarea>
+        <div id="buttonsHolder">
+          <button id="backButton">&lt;</button>
+          <button id="createThreadButton">+ Post</button>
+        </div>
+    </div>
+</div>

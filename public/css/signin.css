@@ -1,0 +1,42 @@
+body {
+    background-color: #2a2a2a;
+}
+
+div {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+
+#usernameInput,
+#passwordInput {
+    width: 170px;
+    height: 20px;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+}
+
+#signinButton {
+    width: 80px;
+    height: 30px;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: white;
+    margin-left: 20px;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+p {
+    color: white;
+    font-family: monospace;
+    font-size: 18px;
+}
+
+a {
+    text-decoration: none;
+    color: lightgray;
+}

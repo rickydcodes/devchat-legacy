@@ -1,0 +1,77 @@
+<%- contentFor(`main`) %>
+<div data-profileid="<%=profileUser["_id"]%>" id="main">
+
+    <div id="header">
+        <div id="pfpHolder">
+           <img id="profilePicture" title="Profile Picture" src="<%=profileUser.profilepicture%>">
+           <img id="online" title="<%=online ? "Online" : "Away"%>" src="<%=online ? "/assets/online.png" : "/assets/away.png"%>">
+        </div>
+        <div id="userInfo">
+            <div id="skillLevelTitle"><%=profileUser.skilllevel%></div>
+            <div id="usernameTitle">@<%=profileUser.username%></div>
+            <div id="followersHolder">
+              <p id="followers">Followers: <a href="<%=profileUser["_id"]%>/followers">
+                <%=profileUser.followers.length%></a>
+              </p>
+              <p id="following">Following: <a href="<%=profileUser["_id"]%>/following">
+                <%=profileUser.following.length%></a>
+              </p>
+            </div>
+        </div>
+        <% if (profileUser["_id"] != user["_id"]) { %>
+        <div id="followBtnHolder">
+          <button id="followButton">
+            <%=!profileUser.followers.includes(user["_id"])?"Follow":"Unfollow"%>
+          </button>
+          <% if (user.administrator) { %>
+            <button id="banUserButton">
+                <a href="/admin/ban/<%=profileUser['_id']%>"><%=profileUser.banned == false ? "Ban User" : "Unban User"%></a>
+            </button>
+          <% } %>
+          <% if (user.administrator == "Owner") { %>
+            <button id="makeAdminButton"><%=!profileUser.administrator ? "Give Admin Powers" : "Remove Admin Powers"%></button>
+          <% } %>
+        </div>
+        <% } %>
+    </div>
+
+    <div id="info">
+        <div id="status">
+            <% if (profileUser["_id"] == user["_id"]) { %>
+            <div id="editButton"></div>
+            <% } %>
+            <h2 id="statusTitle">Status</h2>
+            <% if (profileUser.username == user.username) { %>
+            <div id="editDiv">
+                <textArea id="editInput" placeholder="Edit status" type="text"><%=profileUser.status%></textArea>
+                <div id="cancelSaveDiv">
+                    <button id="cancelButton">Cancel</button>
+                    <button id="saveButton">Save</button>
+                </div>
+            </div>
+            <% } %>
+            <div id="statusParagraph"><%=profileUser.status%></div>
+        </div>
+    </div>
+
+    <div id="badgeDiv">
+        <h2 id="badgeTitle">Badges</h2>
+        <div id="badges">
+           <% for (let badge of profileUser.badges) { %>
+             <div class="badge" title="<%=badge.description%>">
+               <h2 class="badgeTitle"><%=badge.title%></h2>
+               <image class="badgeImage" src="/assets/<%=badge.image%>">
+             </div>
+           <% } %>
+        </div>
+    </div>
+
+    <div id="footer">
+       <div id="stats">
+         <h2 class="stat">Join Date: <span><%=joindate%></span></h2>
+         <h2 class="stat">Last online: <span><%=lastOnline%></span></h2>
+       </div>
+    </div>
+</div>
+
+<!-- what if there was an option for users to set if they're online, or away?? -->

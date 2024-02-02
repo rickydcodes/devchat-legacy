@@ -1,0 +1,38 @@
+<%- contentFor(`main`) %>
+<div id="main">
+    <div id="settings">
+        <h2 id="settingsTitle">Settings</h2>
+        <div id="pages">
+            <div class="settingsPage visible">
+                <div id="changePasswordDiv">
+                    <h3 id="changePasswordTitle">Change Password</h3>
+                    <input id="oldPasswordInput" type="password" placeholder="Current Password">
+                    <input id="newPasswordInput" type="password" placeholder="New Password">
+                    <input id="confirmPasswordInput" type="password" placeholder="Confirm Password">
+                    <button id="changePasswordBtn">Change Password</button>
+                </div>
+                <div id="preferencesDiv">
+                    <h3 id="preferencesTitle">Preferences</h3>
+                    <div>
+                        <div>
+                            <% if (user.showRecentActivity) { %>
+                                <input checked="true" id="showRecentActivity" type="checkbox">
+                                <% } else { %>
+                                <input id="showRecentActivity" type="checkbox">
+                                <% } %>
+                                <label for="showRecentActivity">Show recent activity on profile</label>
+                        </div>
+                        <!-- <div>
+                            <% if (user.notifyMyFollowers) { %>
+                                <input checked="true" id="notifyMyFollowers" type="checkbox">
+                                <% } else { %>
+                                <input id="notifyMyFollowers" type="checkbox">
+                            <% } %>
+                            <label for="notifyMyFollowers">Notify my followers when I create threads and replies</label>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

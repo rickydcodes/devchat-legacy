@@ -1,0 +1,22 @@
+<%- contentFor(`main`) %>
+<div id="main">
+     <div id="followingHolder">
+       <h2>Following</h2>
+      <% if (profileUser.following.length > 0) { %>
+      <% for (let followingUser of following) { %>
+       <div class="following">
+         <p class="followingUsername">
+           <a href="/users/<%=followingUser["_id"]%>">
+             <%=followingUser.username%>
+           </a>
+         </p>
+         <img class="followingPfp" src="<%=followingUser.profilepicture%>">
+         <p class="followingkillLevel"><%=followingUser.skilllevel%></p>
+         <p class="followingJoinDate">Joined <%=followingUser.joindate%></p>
+       </div>
+     <% } %>
+     <% } else { %>
+       <p id="nofollowingMessage">This user is not following anyone.</p>
+     <% } %>
+     </div>
+</div>

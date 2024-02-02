@@ -1,0 +1,50 @@
+<%- contentFor(`main`) %>
+<table id="threadsHolder">
+    <% for (let thread of threads) { %>
+    <tr data-topicid='<%=thread["_id"]%>' class="thread">
+
+        <% if (user.administrator) { %>
+            <td class="deleteButtonTD">
+                <a class="deleteIcon" href="/admin/delete/<%=thread['_id']%>">x</a>
+            </td>
+        <% } %>
+
+        <td class="threadTitleTD">
+            <a class="threadTitle" href="/threads/<%=thread["_id"]%>"><%=thread.title%></a>
+        </td>
+
+        <td class="threadRepliesTD">
+            <a href="/threads/<%=thread["_id"]%>" class="threadReplies">
+                <% if (thread.replyNumber >= 1000) { %>
+                Replies: 1k+
+                <% } else { %>
+                Replies: <%=thread.replyNumber%>
+                <% }%>
+            </a>
+        </td>
+
+        <td class="threadViewsTD">
+            <a href="/threads/<%=thread["_id"]%>" class="threadViews">
+                <% if (thread.views >= 1000) { %>
+                Views: 1k+
+                <% } else { %>
+                Views: <%=thread.views%>
+                <% }%>
+            </a>
+        </td>
+
+        <td class="threadDateTD">
+            <a href="/threads/<%=thread["_id"]%>" class="threadDate">
+                Posted <%=thread.timeDifference%>
+            </a>
+        </td>
+    </tr>
+    <% } %>
+</table>
+<% if (threadPageCount > 1) { %>
+<div data-page="<%=page%>" data-pagecount="<%=threadPageCount%>" id="navigator">
+    <button class="pageSelector" id="previousButton">&lt;</button>
+    <div id="display"><%=page+1%> of <%=threadPageCount%></div>
+    <button class="pageSelector" id="nextButton">&gt;</button>
+</div>
+<% } %>
